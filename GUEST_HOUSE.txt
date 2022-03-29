@@ -1,0 +1,24 @@
+*SOLUTIONS OF GUEST_HOUSE QUESTIONS
+  
+1.SELECT booking_date,nights
+from booking 
+ WHERE guest_id=1183
+2.SELECT
+	booking.arrival_time,
+	guest.first_name,
+	guest.last_name
+FROM booking JOIN guest ON (booking.guest_id = guest.id )WHERE
+	YEAR(booking.booking_date) = '2016'
+	AND MONTH(booking.booking_date) = '11'
+	AND DAY(booking.booking_date) = '05'
+ORDER BY booking.arrival_time;
+3.SELECT booking.booking_id,booking.room_type_requested,booking.occupants,rate.amount
+FROM booking JOIN rate ON(booking.occupants=rate.occupancy)
+AND (booking.room_type_requested=rate.room_type)
+WHERE booking.booking_id=5152 OR booking.booking_id=5154 OR booking.booking_id=5295;
+4.SELECT guest.first_name, guest.last_name, guest.address
+FROM guest JOIN booking ON(booking.guest_id=guest.id)
+WHERE booking.room_no=101 AND booking.booking_date='2016-12-03';
+5.select guest.first_name,guest.last_name,guest.address
+from guest JOIN booking ON(booking.guest_id=guest.id)
+WHERE booking.room_no=101 AND booking.booking_date='2016-12-03';
