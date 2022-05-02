@@ -1,0 +1,46 @@
+DELETE FUNCTION:
+
+public string DeleteBooking(int BookingId)
+{
+    string msg ="";
+    moviedetails booking = Dbcontext.BookingDetails.find(123);
+    if(booking !=null)
+{
+    Dbcontext.BookingDetails.Remove(booking);
+    Dbcontext.saveChanges();
+    msg="booking deleted";
+ }
+ return msg;
+}
+ 
+
+SAVE FUNCTION:
+ 
+public string Savebooking( BookingDetails bookingDetails)
+
+{
+
+Dbcontext.BookingDetails.Add(booking);
+
+Dbcontext.saveChanges();
+
+return "saved";
+
+}
+
+UPDATE FUNCTION:
+
+
+public string Updatebooking( BookingDetails bookingDetails)
+{
+
+ Booking newBooking = new Booking ("");
+
+ newBooking.Savechanges();
+              
+ newBooking.Update();
+
+ Booking  updatedBook = Book.Find(BookingId);
+
+              
+ }
